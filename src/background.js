@@ -21,7 +21,7 @@ chrome.runtime.onInstalled.addListener(function() {
 					xhr.setRequestHeader('X-CSRF-Token', cookie.value);
 					xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
 					xhr.send("geometry=POINT(" + response.lat + "+" + response.lon + ")&" +
-						 "description=" + escape(desc) + "&" +
+						 "description=" + desc + "&" +
 						 "type=7");
 				});
 			}
