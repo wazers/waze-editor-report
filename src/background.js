@@ -1,15 +1,19 @@
 chrome.runtime.onInstalled.addListener(function() {
-	chrome.contextMenus.create({
-		"title":		chrome.i18n.getMessage('menuTitle'),
-		"documentUrlPatterns":	["https://*.waze.com/*/editor/*", "https://*.waze.com/editor/*"],
-		"contexts":		['page'],
-		"id":			'WazeEditorReportSend'});
-
+	var types = [10, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 18];
+	for (i in types) {
+		chrome.contextMenus.create({
+			"title":		chrome.i18n.getMessage('reportType' + types[i]),
+			"documentUrlPatterns":	["https://*.waze.com/*/editor/*", "https://*.waze.com/editor/*"],
+			"contexts":		['page'],
+			"id":			'Waze_Report_' + types[i]});
+	}
 });
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
-	if (info.menuItemId != "WazeEditorReportSend") { return };
+	var mid = "Waze_Report_";
+	if (info.menuItemId.indexOf(mid) != 0) { console.log(info.menuItemId); return };
 
+	typeno = info.menuItemId.slice(mid.length);
 	var desc = prompt(chrome.i18n.getMessage('enterDescription'));
 	if (!desc) return;
 
@@ -25,7 +29,7 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
 
 				xhr.send("geometry=POINT(" + response.lat + "+" + response.lon + ")&" +
 					 "description=" + desc + "&" +
-					 "type=10");
+					 "type=" + typeno);
 			});
 		}
 	);

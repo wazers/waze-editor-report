@@ -7,9 +7,6 @@
 		"description": "Extension name",
 		"message": "WME Report a problem"
 	},
-	"menuTitle": {
-		"message": "Report a problem"
-	},
 	"enterDescription": {
 		"message": "Description:"
 	},

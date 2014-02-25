@@ -7,10 +7,46 @@
 		"description": "Extension name",
 		"message": "WME Сообщить о проблеме"
 	},
-	"menuTitle": {
-		"message": "Сообщить о проблеме"
-	},
 	"enterDescription": {
 		"message": "Описание:"
+	},
+	"reportType6": {
+		"message": "Ошибочный поворот"
+	},
+	"reportType7": {
+		"message": "Неверный адрес"
+	},
+	"reportType8": {
+		"message": "Неверный маршрут"
+	},
+	"reportType9": {
+		"message": "Пропущено кольцо"
+	},
+	"reportType10": {
+		"message": "Общая ошибка"
+	},
+	"reportType11": {
+		"message": "Поворот запрещен"
+	},
+	"reportType12": {
+		"message": "Неправильная развязка"
+	},
+	"reportType13": {
+		"message": "Отсутствует мост"
+	},
+	"reportType14": {
+		"message": "Неправильное направление движения"
+	},
+	"reportType15": {
+		"message": "Отстутсвует съезд"
+	},
+	"reportType16": {
+		"message": "Отсутствует дорога"
+	},
+	"reportType17": {
+		"message": "???"
+	},
+	"reportType18": {
+		"message": "Отсутствует ориентир"
 	}
 }
