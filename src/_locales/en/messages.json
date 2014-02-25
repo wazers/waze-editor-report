@@ -12,5 +12,44 @@
 	},
 	"enterDescription": {
 		"message": "Description:"
+	},
+	"reportType6": {
+		"message": "Incorrect turn"
+	},
+	"reportType7": {
+		"message": "Incorrect address"
+	},
+	"reportType8": {
+		"message": "Incorrect route"
+	},
+	"reportType9": {
+		"message": "Missing roundabout"
+	},
+	"reportType10": {
+		"message": "General error"
+	},
+	"reportType11": {
+		"message": "Turn not allowed"
+	},
+	"reportType12": {
+		"message": "Incorrect junction"
+	},
+	"reportType13": {
+		"message": "Missing bridge overpass"
+	},
+	"reportType14": {
+		"message": "Wrong driving direction"
+	},
+	"reportType15": {
+		"message": "Missing exit"
+	},
+	"reportType16": {
+		"message": "Missing road"
+	},
+	"reportType17": {
+		"message": "???"
+	},
+	"reportType18": {
+		"message": "Missing landmark"
 	}
 }

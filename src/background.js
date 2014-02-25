@@ -23,20 +23,6 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
 				xhr.setRequestHeader('X-CSRF-Token', cookie.value);
 				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
 
-				// types:
-				// 18: missing landmark
-				// 17: [missing "en.update_requests.types.17" translation]
-				// 16: missing road
-				// 15: missing exit
-				// 14: wrong driving direction
-				// 13: missing bridge overpass
-				// 12: incorrect junction
-				// 11: turn not allowed
-				// 10: general error
-				// 9: missing roundabout
-				// 8: incorrect route
-				// 7: incorrect address
-				// 6: incorrect turn
 				xhr.send("geometry=POINT(" + response.lat + "+" + response.lon + ")&" +
 					 "description=" + desc + "&" +
 					 "type=10");
