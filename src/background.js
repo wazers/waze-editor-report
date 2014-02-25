@@ -1,12 +1,19 @@
-chrome.contextMenus.create({
-	"title": chrome.i18n.getMessage('menuTitle'),
-	"documentUrlPatterns": ["https://*.waze.com/*/editor/*", "https://*.waze.com/editor/*"],
-	"contexts":['page'],
-	"onclick": function(info, tab) {
+chrome.runtime.onInstalled.addListener(function() {
+	chrome.contextMenus.create({
+		"title":		chrome.i18n.getMessage('menuTitle'),
+		"documentUrlPatterns":	["https://*.waze.com/*/editor/*", "https://*.waze.com/editor/*"],
+		"contexts":		['page'],
+		"id":			'WazeEditorReportSend'});
+
+	chrome.contextMenus.onClicked.addListener(function(info, tab) {
+		if (info.menuItemId != "WazeEditorReportSend") { return };
+
 		var desc = prompt(chrome.i18n.getMessage('enterDescription'));
+		if (!desc) return;
+
 		chrome.cookies.get({url: "https://www.waze.com", name: "_csrf_token"},
 			function(cookie) {
-				chrome.tabs.sendRequest(tab.id, 'getCurrentLocation', function(response) {
+				chrome.tabs.sendMessage(tab.id, 'getCurrentLocation', function(response) {
 					console.log('Got coordinates: ' + JSON.stringify(response));
 					
 					var xhr = new XMLHttpRequest();
@@ -19,5 +26,5 @@ chrome.contextMenus.create({
 				});
 			}
 		);
-	}
+	});
 });
