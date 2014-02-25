@@ -17,14 +17,23 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
 		function(cookie) {
 			chrome.tabs.sendMessage(tab.id, 'getCurrentLocation', function(response) {
 				console.log('Got coordinates: ' + JSON.stringify(response));
-				
+
 				var xhr = new XMLHttpRequest();
 				xhr.open("POST", "https://www.waze.com/row-Descartes-live/app/MapProblems/UpdateRequest", true);
 				xhr.setRequestHeader('X-CSRF-Token', cookie.value);
 				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
+
+				// types:
+				// 18: missing landmark
+				// 16: missing road
+				// 14: wrong driving direction
+				// 10: general error
+				// 9: missing roundabout
+				// 7: incorrect address
+				// 6: incorrect turn
 				xhr.send("geometry=POINT(" + response.lat + "+" + response.lon + ")&" +
 					 "description=" + desc + "&" +
-					 "type=7");
+					 "type=10");
 			});
 		}
 	);
