@@ -1,0 +1,16 @@
+{
+	"extDesctription": {
+		"description": "Extension description",
+		"message": "Report problems from editor window"
+	},
+	"extName": {
+		"description": "Extension name",
+		"message": "Waze editor: Report a problem"
+	},
+	"menuTitle": {
+		"message": "Report a problem"
+	},
+	"enterDescription": {
+		"message": "Description:"
+	}
+}

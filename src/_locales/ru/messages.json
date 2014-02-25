@@ -1,0 +1,16 @@
+﻿{
+	"extDesctription": {
+		"description": "Extension description",
+		"message": "Отправка сообщений об ошибках прямо из редактора"
+	},
+	"extName": {
+		"description": "Extension name",
+		"message": "Редактор Waze: Сообщить о проблеме"
+	},
+	"menuTitle": {
+		"message": "Сообщить о проблеме"
+	},
+	"enterDescription": {
+		"message": "Описание:"
+	}
+}

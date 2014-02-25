@@ -1,0 +1,32 @@
+{
+	"author": "Leonid Suprun <mr.slay@gmail.com>",
+	"manifest_version": 2,
+
+	"name": "__MSG_extName__",
+	"description": "__MSG_extDesctription__",
+	"version": "0.2",
+
+	"background": {
+		"scripts": ["background.js"]
+	},
+ 
+	"permissions": [
+		"contextMenus",
+		"cookies",
+		"https://*.waze.com/*"
+	],
+
+	"content_scripts": [
+		{
+			"matches": ["https://*.waze.com/*/editor/*", "https://*.waze.com/editor/*"],
+			"js": ["content.js"]
+		}
+	],
+
+	"icons": {
+		"16" : "images/icon-16.png",
+		"48" : "images/icon-48.png",
+		"128": "images/icon-128.png"
+	},
+	"default_locale": "en"
+}
