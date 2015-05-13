@@ -4,7 +4,7 @@
 
 	"name": "__MSG_extName__",
 	"description": "__MSG_extDesctription__",
-	"version": "0.3",
+	"version": "1.0",
 	"minimum_chrome_version": "22",
 
 	"background": {
