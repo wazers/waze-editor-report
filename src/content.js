@@ -2,7 +2,7 @@ var mousePosition;
 
 document.addEventListener("mousedown", function(e) {
 	if (e.button == 2) {
-		var p = document.getElementsByClassName('olControlMousePosition')[0].innerHTML.replace(' ', '').split(',');
+		var p = document.getElementsByClassName('mouse-position')[0].innerHTML.split(' ');
 		mousePosition = {
 			lat: p[0],
 			lon: p[1]
