@@ -23,7 +23,8 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
 				console.log('Got coordinates: ' + JSON.stringify(response));
 
 				var xhr = new XMLHttpRequest();
-				xhr.open('POST', 'https://www.waze.com/row-Descartes-live/app/MapProblems/UpdateRequest', true);
+
+				xhr.open('POST', getUpdateUrl('world'), true);
 				xhr.setRequestHeader('X-CSRF-Token', cookie.value);
 				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
 
@@ -33,4 +34,14 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
 			});
 		}
 	);
+
+	function getUpdateUrl(server) {
+		var prefixes = {
+			israel: 'il-',
+			world: 'row-',
+			usa: ''
+		};
+		return 'https://www.waze.com/'
+			+ prefixes[server] + 'Descartes-live/app/MapProblems/UpdateRequest';
+	}
 });
