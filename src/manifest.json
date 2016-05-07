@@ -4,19 +4,21 @@
 
 	"name": "__MSG_extName__",
 	"description": "__MSG_extDesctription__",
-	"version": "1.0",
+	"version": "1.1",
 	"minimum_chrome_version": "22",
 
 	"background": {
 		"scripts": ["background.js"],
 		"persistent": false
 	},
- 
+
 	"permissions": [
 		"contextMenus",
 		"cookies",
 		"https://*.waze.com/*"
 	],
+
+	"web_accessible_resources" : ["/js/report-a-problem-ext.js"],
 
 	"content_scripts": [
 		{
