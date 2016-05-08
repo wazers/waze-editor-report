@@ -3,12 +3,16 @@
 
 	function setContextMenu() {
 		var types = [10, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 18];
-		for (let i in types) {
+		for (var i in types) {
 			chrome.contextMenus.create({
-				'title':		chrome.i18n.getMessage('reportType' + types[i]),
-				'documentUrlPatterns':	['https://*.waze.com/*/editor/*', 'https://*.waze.com/editor/*'],
-				'contexts':		['page'],
-				'id':			'Waze_Report_' + types[i]});
+				'title': chrome.i18n.getMessage('reportType' + types[i]),
+				'documentUrlPatterns':	[
+					'https://*.waze.com/*/editor/*',
+					'https://*.waze.com/editor/*'
+				],
+				'contexts': ['page'],
+				'id': 'Waze_Report_' + types[i]
+			});
 		}
 	}
 
