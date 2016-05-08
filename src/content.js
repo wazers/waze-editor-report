@@ -3,11 +3,7 @@
 
 	var mousePosition;
 
-	window.addEventListener('message', function(event) {
-		console.log(event);
-	});
-
-	function answerThePhone(request, sender, sendResponse) {
+	function replyMessage(request, sender, sendResponse) {
 		switch (request) {
 			case 'getCurrentLocation':
 				sendResponse(mousePosition);
@@ -39,6 +35,6 @@
 	}
 
 	document.addEventListener('mousedown', saveLocation);
-	chrome.extension.onMessage.addListener(answerThePhone);
+	chrome.extension.onMessage.addListener(replyMessage);
 	injectScript(chrome.extension.getURL('/js/report-a-problem-ext.js'), 'body');
 }());
