@@ -4,7 +4,7 @@
 
 	"name": "__MSG_extName__",
 	"description": "__MSG_extDesctription__",
-	"version": "1.1",
+	"version": "1.2",
 	"minimum_chrome_version": "22",
 
 	"background": {
@@ -22,7 +22,7 @@
 
 	"content_scripts": [
 		{
-			"matches": ["https://*.waze.com/*/editor/*", "https://*.waze.com/editor/*"],
+			"matches": ["https://*.waze.com/*/editor*", "https://*.waze.com/editor*"],
 			"js": ["content.js"]
 		}
 	],

@@ -7,8 +7,8 @@
 			chrome.contextMenus.create({
 				'title': chrome.i18n.getMessage('reportType' + types[i]),
 				'documentUrlPatterns':	[
-					'https://*.waze.com/*/editor/*',
-					'https://*.waze.com/editor/*'
+					'https://*.waze.com/*/editor*',
+					'https://*.waze.com/editor*'
 				],
 				'contexts': ['page'],
 				'id': 'Waze_Report_' + types[i]
